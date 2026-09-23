@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-header">
+
+    <h1>Financeiro</h1>
+
+    <p>
+        Consulte suas informações financeiras neste ambiente de simulação.
+    </p>
+
+</div>
+
+
+<div class="info-alert">
+
+    <span class="alert-icon">✓</span>
+
+    <span>
+        As informações apresentadas abaixo são fictícias e fazem parte
+        da simulação educativa.
+    </span>
+
+</div>
+
+
+<h2 class="section-title">
+    Resumo financeiro
+</h2>
+
+
+<div class="cards">
+
+    <div class="card">
+
+        <div class="card-icon">
+            💰
+        </div>
+
+        <div class="card-content">
+
+            <strong>
+                Cobranças em aberto
+            </strong>
+
+            <span>
+                1 cobrança
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="card-icon">
+            📄
+        </div>
+
+        <div class="card-content">
+
+            <strong>
+                Valor pendente
+            </strong>
+
+            <span>
+                R$ 148,90
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="card-icon">
+            📅
+        </div>
+
+        <div class="card-content">
+
+            <strong>
+                Próximo vencimento
+            </strong>
+
+            <span>
+                Em 3 dias
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<h2 class="section-title">
+    Cobranças
+</h2>
+
+
+<div class="charge">
+
+    <div class="charge-icon">
+        📄
+    </div>
+
+
+    <div class="charge-information">
+
+        <h3>
+            Contribuição Institucional
+        </h3>
+
+        <p>
+            Competência: Maio/2026
+        </p>
+
+        <span class="due">
+            Vencimento em 3 dias
+        </span>
+
+    </div>
+
+
+    <div class="charge-right">
+
+        <strong>
+            R$ 148,90
+        </strong>
+
+        <a href="{{ url_for('gerar_boleto') }}"
+           class="button">
+
+            📄 Gerar boleto
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

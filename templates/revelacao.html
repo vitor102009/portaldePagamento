@@ -1,0 +1,889 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="reveal-page">
+
+    <!-- CABEÇALHO DA REVELAÇÃO -->
+    <div class="reveal-header">
+
+        <div class="reveal-header-icon">
+            🛡️
+        </div>
+
+        <div>
+            <span class="reveal-label">SIMULAÇÃO EDUCATIVA</span>
+
+            <h1>ATENÇÃO! Você acabou de participar de uma simulação.</h1>
+
+            <p>
+                Você acabou de participar de uma simulação educativa
+                do 3º ano de Informática.
+            </p>
+
+            <p style="margin-top: 8px;">
+                Me chamo <strong>Vitor Eloidio</strong> e meu amigo,
+                que me ajudou neste projeto,
+                <strong>Vitor Vanzella</strong>, juntamente com o professor
+                <strong>Felipe Balém</strong>.
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- AVISO PRINCIPAL -->
+    <div class="reveal-notice">
+
+        <div class="reveal-notice-icon">
+            ✓
+        </div>
+
+        <div>
+
+            <strong>Nenhum pagamento real foi realizado.</strong>
+
+            <p>
+                O boleto e todas as informações apresentadas neste ambiente
+                são fictícios e foram utilizados exclusivamente para fins
+                educacionais.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- CARDS PRINCIPAIS -->
+    <div class="reveal-grid">
+
+        <!-- OBJETIVO -->
+        <div class="reveal-card">
+
+            <div class="reveal-card-icon">
+                🎯
+            </div>
+
+            <div>
+
+                <h2>Qual era o objetivo?</h2>
+
+                <p>
+                    Mostrar como uma situação aparentemente normal pode levar
+                    uma pessoa a realizar uma ação sem verificar as informações
+                    primeiro.
+                </p>
+
+                <p>
+                    A atividade busca incentivar uma postura mais cuidadosa
+                    diante de boletos, mensagens, links e cobranças recebidas
+                    pela internet.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ATENÇÃO -->
+        <div class="reveal-card">
+
+            <div class="reveal-card-icon">
+                🔎
+            </div>
+
+            <div>
+
+                <h2>O que devemos verificar?</h2>
+
+                <p>
+                    Antes de realizar um pagamento, procure confirmar a origem
+                    da cobrança e conferir se os dados apresentados realmente
+                    correspondem à instituição ou pessoa responsável.
+                </p>
+
+                <p>
+                    Pequenos cuidados podem evitar decisões tomadas por
+                    impulso ou sem a devida conferência.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CHECKLIST -->
+    <div class="reveal-section">
+
+        <div class="reveal-section-title">
+
+            <span>✓</span>
+
+            <div>
+
+                <h2>Antes de pagar, verifique</h2>
+
+                <p>
+                    Alguns cuidados simples podem ajudar a identificar uma
+                    cobrança suspeita.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="reveal-checklist">
+
+            <div class="reveal-check">
+
+                <span>01</span>
+
+                <div>
+
+                    <strong>Origem da cobrança</strong>
+
+                    <small>
+                        Confira quem enviou o boleto ou a solicitação de pagamento.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="reveal-check">
+
+                <span>02</span>
+
+                <div>
+
+                    <strong>Dados do beneficiário</strong>
+
+                    <small>
+                        Verifique cuidadosamente o nome e os dados apresentados.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="reveal-check">
+
+                <span>03</span>
+
+                <div>
+
+                    <strong>Endereço do site</strong>
+
+                    <small>
+                        Observe se o endereço acessado realmente pertence à instituição.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="reveal-check">
+
+                <span>04</span>
+
+                <div>
+
+                    <strong>Não tenha pressa</strong>
+
+                    <small>
+                        Se algo parecer estranho, pare e confirme as informações.
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- EQUIPE DO PROJETO -->
+    <div class="reveal-team">
+
+        <div class="reveal-team-icon">
+            👨‍💻
+        </div>
+
+        <div>
+
+            <strong>Projeto desenvolvido para fins educacionais</strong>
+
+            <p>
+                Desenvolvido por
+                <strong>Vitor Eloidio</strong> e
+                <strong>Vitor Vanzella</strong>,
+                com orientação do professor
+                <strong>Felipe Balém</strong>.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- VÍDEO EDUCATIVO -->
+    <div class="reveal-video">
+
+        <div class="reveal-video-content">
+
+            <div class="reveal-video-icon">
+                ▶
+            </div>
+
+            <div>
+
+                <h2>Continue a atividade</h2>
+
+                <p>
+                    Assista ao vídeo educativo para entender melhor os cuidados
+                    necessários para evitar golpes digitais.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <a href="{{ url_for('video') }}" class="reveal-video-button">
+
+            Assistir ao vídeo
+
+            <span>→</span>
+
+        </a>
+
+    </div>
+
+
+    <!-- RODAPÉ -->
+    <div class="reveal-footer">
+
+        🛡️ Ambiente de simulação educativa
+
+    </div>
+
+</div>
+
+
+<style>
+
+/* =========================================
+   REVELAÇÃO — PADRÃO DO SISTEMA
+========================================= */
+
+.reveal-page {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+.reveal-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.reveal-header-icon {
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #edf8f4;
+    border: 1px solid #d7ebe3;
+
+    border-radius: 11px;
+
+    font-size: 27px;
+}
+
+.reveal-label {
+    display: inline-block;
+
+    margin-bottom: 6px;
+
+    color: #087e4e;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    letter-spacing: .8px;
+}
+
+.reveal-header h1 {
+    margin: 0 0 8px;
+
+    color: #12352d;
+
+    font-size: 28px;
+    line-height: 1.25;
+}
+
+.reveal-header p {
+    margin: 0;
+
+    max-width: 800px;
+
+    color: #71807b;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.reveal-header p strong {
+    color: #365149;
+}
+
+
+/* =========================================
+   AVISO PRINCIPAL
+========================================= */
+
+.reveal-notice {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 14px;
+
+    padding: 18px 20px;
+
+    margin-bottom: 24px;
+
+    background: #ecf9f4;
+
+    border: 1px solid #c8e8db;
+
+    border-radius: 9px;
+
+    color: #17624b;
+}
+
+.reveal-notice-icon {
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #087e4e;
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.reveal-notice strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #17624b;
+
+    font-size: 14px;
+}
+
+.reveal-notice p {
+    margin: 0;
+
+    color: #52776b;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   CARDS PRINCIPAIS
+========================================= */
+
+.reveal-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 16px;
+
+    margin-bottom: 24px;
+}
+
+.reveal-card {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    min-height: 190px;
+
+    padding: 22px;
+
+    background: white;
+
+    border: 1px solid #dfe8e4;
+
+    border-radius: 11px;
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,.035);
+
+    transition: .2s;
+}
+
+.reveal-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,.07);
+}
+
+.reveal-card-icon {
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #edf8f4;
+
+    border-radius: 9px;
+
+    font-size: 21px;
+}
+
+.reveal-card h2 {
+    margin: 2px 0 9px;
+
+    color: #12352d;
+
+    font-size: 17px;
+}
+
+.reveal-card p {
+    margin: 0 0 9px;
+
+    color: #71807b;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+.reveal-card p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   SEÇÃO DE VERIFICAÇÃO
+========================================= */
+
+.reveal-section {
+    padding: 24px;
+
+    margin-bottom: 24px;
+
+    background: white;
+
+    border: 1px solid #dfe8e4;
+
+    border-radius: 11px;
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,.035);
+}
+
+.reveal-section-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 20px;
+}
+
+.reveal-section-title > span {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #edf8f4;
+
+    color: #087e4e;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+.reveal-section-title h2 {
+    margin: 0 0 4px;
+
+    color: #12352d;
+
+    font-size: 17px;
+}
+
+.reveal-section-title p {
+    margin: 0;
+
+    color: #7a8783;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   CHECKLIST
+========================================= */
+
+.reveal-checklist {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+}
+
+.reveal-check {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px;
+
+    background: #f8faf9;
+
+    border: 1px solid #e5ece9;
+
+    border-radius: 8px;
+}
+
+.reveal-check > span {
+    width: 32px;
+    height: 32px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #edf8f4;
+
+    color: #087e4e;
+
+    border-radius: 7px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+}
+
+.reveal-check strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #365149;
+
+    font-size: 12px;
+}
+
+.reveal-check small {
+    display: block;
+
+    color: #7a8783;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   EQUIPE
+========================================= */
+
+.reveal-team {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 17px 19px;
+
+    margin-bottom: 24px;
+
+    background: #f0f7ff;
+
+    border: 1px solid #d7e7f5;
+
+    border-radius: 9px;
+
+    color: #35566b;
+}
+
+.reveal-team-icon {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    border-radius: 8px;
+
+    font-size: 18px;
+}
+
+.reveal-team strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-size: 12px;
+}
+
+.reveal-team p {
+    margin: 0;
+
+    color: #71818b;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   ÁREA DO VÍDEO
+========================================= */
+
+.reveal-video {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 22px 24px;
+
+    background: white;
+
+    border: 1px solid #dfe8e4;
+
+    border-radius: 11px;
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,.035);
+}
+
+.reveal-video-content {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+.reveal-video-icon {
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #087e4e;
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 16px;
+
+    box-shadow:
+        0 5px 12px rgba(8,126,78,.18);
+}
+
+.reveal-video h2 {
+    margin: 0 0 4px;
+
+    color: #12352d;
+
+    font-size: 16px;
+}
+
+.reveal-video p {
+    margin: 0;
+
+    color: #7a8783;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+.reveal-video-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+
+    padding: 11px 18px;
+
+    background: #087e4e;
+
+    color: white;
+
+    border-radius: 7px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    transition: .2s;
+}
+
+.reveal-video-button:hover {
+    background: #056b42;
+
+    color: white;
+
+    transform: translateY(-1px);
+}
+
+.reveal-video-button span {
+    font-size: 16px;
+}
+
+
+/* =========================================
+   RODAPÉ
+========================================= */
+
+.reveal-footer {
+    padding: 18px 0 5px;
+
+    text-align: center;
+
+    color: #8a9692;
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+
+@media (max-width: 800px) {
+
+    .reveal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reveal-checklist {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .reveal-header {
+        align-items: flex-start;
+    }
+
+    .reveal-header h1 {
+        font-size: 23px;
+    }
+
+    .reveal-header p {
+        font-size: 12px;
+    }
+
+    .reveal-notice {
+        padding: 15px;
+    }
+
+    .reveal-card {
+        padding: 18px;
+    }
+
+    .reveal-section {
+        padding: 18px;
+    }
+
+    .reveal-video {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .reveal-video-button {
+        width: 100%;
+    }
+
+    .reveal-team {
+        align-items: flex-start;
+    }
+
+}
+
+</style>
+
+{% endblock %}

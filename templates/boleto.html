@@ -1,0 +1,459 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="boleto-page">
+
+    <div class="boleto-heading">
+        <div>
+            <span>DOCUMENTO FINANCEIRO</span>
+            <h1>Boleto de Pagamento</h1>
+            <p>Confira as informações da cobrança antes de continuar.</p>
+        </div>
+
+        <div class="status-badge">
+            EM ABERTO
+        </div>
+    </div>
+
+
+    <div class="boleto-paper">
+
+        <div class="paper-header">
+
+            <div class="institution">
+                <div class="institution-symbol">
+                    IF
+                </div>
+
+                <div>
+                    <strong>INSTITUTO FEDERAL</strong>
+                    <small>Rondônia</small>
+                </div>
+            </div>
+
+            <div class="document-name">
+                BOLETO
+            </div>
+
+        </div>
+
+
+        <div class="paper-divider"></div>
+
+
+        <div class="payment-title">
+            Contribuição Institucional
+        </div>
+
+
+        <div class="payment-data">
+
+            <div>
+                <small>BENEFICIÁRIO</small>
+                <strong>Instituto Federal - Rondônia</strong>
+            </div>
+
+            <div>
+                <small>COMPETÊNCIA</small>
+                <strong>Outubro/2026</strong>
+            </div>
+
+            <div>
+                <small>VENCIMENTO</small>
+                <strong>01/10/2026</strong>
+            </div>
+
+            <div>
+                <small>VALOR</small>
+                <strong class="amount">R$ 148,90</strong>
+            </div>
+
+        </div>
+
+
+        <div class="server-data">
+
+            <div>
+                <small>SERVIDOR</small>
+                <strong>{{ servidor }}</strong>
+            </div>
+
+            <div>
+                <small>IDENTIFICAÇÃO</small>
+                <strong>SIMULAÇÃO</strong>
+            </div>
+
+        </div>
+
+
+        <div class="barcode-section">
+
+            <div class="barcode">
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+            </div>
+
+            <p>
+                00000.00000 00000.000000 00000.000000 0 00000000000000
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="boleto-buttons">
+
+        <a
+            href="{{ url_for('video') }}"
+            class="pay-button"
+        >
+            💳 Continuar para pagamento
+            <span>→</span>
+        </a>
+
+        <a
+            href="{{ url_for('gerar_boleto') }}"
+            class="back-button"
+        >
+            ← Voltar
+        </a>
+
+    </div>
+
+</div>
+
+
+<style>
+
+.boleto-page {
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+
+/* CABEÇALHO */
+
+.boleto-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.boleto-heading span {
+    color: #087e4e;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.boleto-heading h1 {
+    margin: 5px 0;
+    color: #173b31;
+    font-size: 28px;
+}
+
+.boleto-heading p {
+    margin: 0;
+    color: #7b8983;
+    font-size: 13px;
+}
+
+.status-badge {
+    padding: 8px 13px;
+    border-radius: 20px;
+    background: #eaf7f0;
+    color: #087e4e;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+/* BOLETO */
+
+.boleto-paper {
+    padding: 32px;
+    border: 1px solid #dce5e1;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 12px 32px rgba(0,0,0,.06);
+}
+
+.paper-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.institution {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.institution-symbol {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #087e4e;
+    color: white;
+
+    font-weight: 800;
+}
+
+.institution strong {
+    display: block;
+    color: #173b31;
+    font-size: 13px;
+}
+
+.institution small {
+    color: #87938e;
+    font-size: 10px;
+}
+
+.document-name {
+    color: #087e4e;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.paper-divider {
+    height: 1px;
+    margin: 25px 0;
+    background: #e8efec;
+}
+
+.payment-title {
+    margin-bottom: 20px;
+    color: #23463b;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+
+/* DADOS */
+
+.payment-data {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 13px;
+}
+
+.payment-data > div,
+.server-data > div {
+    padding: 14px;
+    border: 1px solid #edf1ef;
+    border-radius: 8px;
+    background: #fafcfb;
+}
+
+.payment-data small,
+.server-data small {
+    display: block;
+    margin-bottom: 6px;
+    color: #89958f;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.payment-data strong,
+.server-data strong {
+    color: #304b42;
+    font-size: 11px;
+}
+
+.amount {
+    color: #087e4e !important;
+    font-size: 15px !important;
+}
+
+
+/* SERVIDOR */
+
+.server-data {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+    margin-top: 13px;
+}
+
+
+/* CÓDIGO */
+
+.barcode-section {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px dashed #d5dfdb;
+}
+
+.barcode {
+    height: 60px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 3px;
+}
+
+.barcode i {
+    display: block;
+    background: #17231f;
+}
+
+.barcode i:nth-child(1),
+.barcode i:nth-child(7),
+.barcode i:nth-child(13),
+.barcode i:nth-child(19) {
+    width: 6px;
+}
+
+.barcode i:nth-child(2),
+.barcode i:nth-child(5),
+.barcode i:nth-child(11),
+.barcode i:nth-child(17) {
+    width: 2px;
+}
+
+.barcode i:nth-child(3),
+.barcode i:nth-child(9),
+.barcode i:nth-child(15) {
+    width: 8px;
+}
+
+.barcode i:nth-child(4),
+.barcode i:nth-child(8),
+.barcode i:nth-child(12),
+.barcode i:nth-child(16),
+.barcode i:nth-child(20) {
+    width: 3px;
+}
+
+.barcode-section p {
+    margin: 8px 0 0;
+    text-align: center;
+    color: #65736d;
+    font-family: monospace;
+    font-size: 9px;
+}
+
+
+/* BOTÕES */
+
+.boleto-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.pay-button,
+.back-button {
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 19px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.pay-button {
+    background: #087e4e;
+    color: white;
+    box-shadow: 0 6px 16px rgba(8,126,78,.20);
+    transition: .2s;
+}
+
+.pay-button:hover {
+    background: #056b42;
+    transform: translateY(-1px);
+}
+
+.pay-button span {
+    font-size: 17px;
+}
+
+.back-button {
+    border: 1px solid #d7e0dc;
+    background: white;
+    color: #596962;
+}
+
+.back-button:hover {
+    border-color: #087e4e;
+    color: #087e4e;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 750px) {
+
+    .payment-data {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .boleto-heading {
+        flex-direction: column;
+    }
+
+    .boleto-paper {
+        padding: 20px;
+    }
+
+    .payment-data,
+    .server-data {
+        grid-template-columns: 1fr;
+    }
+
+    .boleto-buttons {
+        flex-direction: column;
+    }
+
+    .pay-button,
+    .back-button {
+        width: 100%;
+    }
+
+}
+
+</style>
+
+{% endblock %}

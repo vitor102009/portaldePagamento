@@ -1,0 +1,829 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="finance-page">
+
+    <!-- CABEÇALHO -->
+
+    <div class="finance-header">
+
+        <div class="finance-title">
+
+            <div class="finance-icon">
+                📄
+            </div>
+
+            <div>
+                <span class="section-label">
+                    FINANCEIRO
+                </span>
+
+                <h1>
+                    Gerar Boleto
+                </h1>
+
+                <p>
+                    Consulte os dados da cobrança antes de gerar o documento.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CONTEÚDO -->
+
+    <div class="finance-grid">
+
+
+        <!-- COBRANÇA -->
+
+        <div class="payment-card">
+
+            <div class="card-top">
+
+                <div>
+
+                    <span class="card-label">
+                        COBRANÇA
+                    </span>
+
+                    <h2>
+                        Contribuição Institucional
+                    </h2>
+
+                </div>
+
+                <span class="open-status">
+                    ● Em aberto
+                </span>
+
+            </div>
+
+
+            <div class="divider"></div>
+
+
+            <!-- INFORMAÇÕES -->
+
+            <div class="payment-info">
+
+                <div class="info-item">
+
+                    <span class="info-icon">
+                        📋
+                    </span>
+
+                    <div>
+
+                        <small>
+                            Descrição
+                        </small>
+
+                        <strong>
+                            Contribuição Institucional
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span class="info-icon">
+                        📅
+                    </span>
+
+                    <div>
+
+                        <small>
+                            Competência
+                        </small>
+
+                        <strong>
+                            Outubro/2026
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span class="info-icon">
+                        ⏰
+                    </span>
+
+                    <div>
+
+                        <small>
+                            Vencimento
+                        </small>
+
+                        <strong>
+                            01/10/2026
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span class="info-icon">
+                        💰
+                    </span>
+
+                    <div>
+
+                        <small>
+                            Valor da cobrança
+                        </small>
+
+                        <strong class="payment-value">
+                            R$ 148,90
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTÕES -->
+
+            <div class="payment-actions">
+
+                <a
+                    href="{{ url_for('boleto') }}"
+                    class="generate-button"
+                >
+                    <span>📄</span>
+                    Gerar boleto
+                    <b>→</b>
+                </a>
+
+
+                <a
+                    href="{{ url_for('painel') }}"
+                    class="back-button"
+                >
+                    ← Voltar para o painel
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RESUMO -->
+
+        <aside class="payment-summary">
+
+            <div class="summary-header">
+
+                <span class="summary-icon">
+                    🧾
+                </span>
+
+                <div>
+
+                    <strong>
+                        Resumo da cobrança
+                    </strong>
+
+                    <span>
+                        Informações do documento
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Status
+                </span>
+
+                <strong class="summary-open">
+                    Em aberto
+                </strong>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Competência
+                </span>
+
+                <strong>
+                    Outubro/2026
+                </strong>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Vencimento
+                </span>
+
+                <strong>
+                    01/10/2026
+                </strong>
+
+            </div>
+
+
+            <div class="summary-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong>
+                    R$ 148,90
+                </strong>
+
+            </div>
+
+
+            <div class="summary-info">
+
+                <span>ℹ️</span>
+
+                <p>
+                    Confira os dados da cobrança antes de continuar.
+                </p>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</div>
+
+
+<style>
+
+    /* =========================================
+       GERAR BOLETO
+    ========================================= */
+
+    .finance-page {
+        max-width: 1180px;
+        margin: 0 auto;
+    }
+
+
+    /* CABEÇALHO */
+
+    .finance-header {
+        margin-bottom: 30px;
+    }
+
+
+    .finance-title {
+        display: flex;
+        align-items: center;
+        gap: 17px;
+    }
+
+
+    .finance-icon {
+        width: 55px;
+        height: 55px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 12px;
+
+        background: #eaf7f2;
+
+        font-size: 24px;
+    }
+
+
+    .section-label {
+        display: block;
+
+        margin-bottom: 4px;
+
+        color: #087e4e;
+
+        font-size: 10px;
+
+        font-weight: 800;
+
+        letter-spacing: 1.2px;
+    }
+
+
+    .finance-title h1 {
+        margin: 0;
+
+        color: #173b31;
+
+        font-size: 29px;
+    }
+
+
+    .finance-title p {
+        margin: 5px 0 0;
+
+        color: #7a8883;
+
+        font-size: 13px;
+    }
+
+
+
+    /* GRID */
+
+    .finance-grid {
+        display: grid;
+
+        grid-template-columns: minmax(0, 1fr) 330px;
+
+        gap: 22px;
+
+        align-items: start;
+    }
+
+
+
+    /* CARD PRINCIPAL */
+
+    .payment-card {
+        padding: 29px;
+
+        border: 1px solid #e0e8e4;
+
+        border-radius: 13px;
+
+        background: #ffffff;
+
+        box-shadow: 0 8px 25px rgba(0,0,0,.05);
+    }
+
+
+    .card-top {
+        display: flex;
+
+        align-items: flex-start;
+
+        justify-content: space-between;
+
+        gap: 20px;
+    }
+
+
+    .card-label {
+        display: block;
+
+        margin-bottom: 7px;
+
+        color: #87938f;
+
+        font-size: 10px;
+
+        font-weight: 800;
+
+        letter-spacing: 1px;
+    }
+
+
+    .card-top h2 {
+        margin: 0;
+
+        color: #183c32;
+
+        font-size: 20px;
+    }
+
+
+    .open-status {
+        padding: 7px 11px;
+
+        border-radius: 20px;
+
+        background: #eaf7f0;
+
+        color: #087e4e;
+
+        font-size: 11px;
+
+        font-weight: 700;
+
+        white-space: nowrap;
+    }
+
+
+    .divider {
+        height: 1px;
+
+        margin: 25px 0;
+
+        background: #edf1ef;
+    }
+
+
+
+    /* INFORMAÇÕES */
+
+    .payment-info {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 18px;
+    }
+
+
+    .info-item {
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+        padding: 15px;
+
+        border: 1px solid #edf1ef;
+
+        border-radius: 9px;
+
+        background: #fafcfb;
+    }
+
+
+    .info-icon {
+        width: 36px;
+        height: 36px;
+
+        flex-shrink: 0;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 8px;
+
+        background: #edf7f3;
+
+        font-size: 15px;
+    }
+
+
+    .info-item small {
+        display: block;
+
+        margin-bottom: 4px;
+
+        color: #87938f;
+
+        font-size: 10px;
+    }
+
+
+    .info-item strong {
+        display: block;
+
+        color: #29483f;
+
+        font-size: 12px;
+    }
+
+
+    .payment-value {
+        color: #087e4e !important;
+
+        font-size: 16px !important;
+    }
+
+
+
+    /* AÇÕES */
+
+    .payment-actions {
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+        margin-top: 27px;
+
+        padding-top: 23px;
+
+        border-top: 1px solid #edf1ef;
+    }
+
+
+    .generate-button {
+        flex: 1;
+
+        min-height: 46px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 9px;
+
+        box-sizing: border-box;
+
+        padding: 0 18px;
+
+        border-radius: 8px;
+
+        background: #087e4e;
+
+        color: white;
+
+        font-size: 12px;
+
+        font-weight: 700;
+
+        text-decoration: none;
+
+        box-shadow: 0 6px 15px rgba(8,126,78,.18);
+
+        transition: .2s;
+    }
+
+
+    .generate-button:hover {
+        background: #056b42;
+
+        transform: translateY(-1px);
+
+        box-shadow: 0 9px 20px rgba(8,126,78,.23);
+    }
+
+
+    .generate-button b {
+        font-size: 17px;
+
+        font-weight: 400;
+    }
+
+
+    .back-button {
+        min-height: 46px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        box-sizing: border-box;
+
+        padding: 0 17px;
+
+        border: 1px solid #d8e1dd;
+
+        border-radius: 8px;
+
+        background: white;
+
+        color: #52635c;
+
+        font-size: 11px;
+
+        font-weight: 700;
+
+        text-decoration: none;
+
+        transition: .2s;
+    }
+
+
+    .back-button:hover {
+        border-color: #087e4e;
+
+        color: #087e4e;
+
+        background: #f5faf8;
+    }
+
+
+
+    /* RESUMO */
+
+    .payment-summary {
+        padding: 23px;
+
+        border: 1px solid #e0e8e4;
+
+        border-radius: 13px;
+
+        background: #ffffff;
+
+        box-shadow: 0 8px 25px rgba(0,0,0,.05);
+    }
+
+
+    .summary-header {
+        display: flex;
+
+        align-items: center;
+
+        gap: 11px;
+
+        padding-bottom: 19px;
+
+        border-bottom: 1px solid #edf1ef;
+    }
+
+
+    .summary-icon {
+        width: 38px;
+        height: 38px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 8px;
+
+        background: #f0f5f3;
+
+        font-size: 16px;
+    }
+
+
+    .summary-header strong {
+        display: block;
+
+        color: #29483f;
+
+        font-size: 12px;
+    }
+
+
+    .summary-header span:last-child {
+        display: block;
+
+        margin-top: 3px;
+
+        color: #8a9691;
+
+        font-size: 10px;
+    }
+
+
+    .summary-row {
+        display: flex;
+
+        justify-content: space-between;
+
+        gap: 15px;
+
+        padding: 15px 0;
+
+        border-bottom: 1px solid #f0f3f2;
+
+        font-size: 11px;
+    }
+
+
+    .summary-row span {
+        color: #85918d;
+    }
+
+
+    .summary-row strong {
+        color: #314b43;
+
+        text-align: right;
+    }
+
+
+    .summary-open {
+        color: #087e4e !important;
+    }
+
+
+    .summary-total {
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        padding: 19px 0 5px;
+    }
+
+
+    .summary-total span {
+        color: #687771;
+
+        font-size: 11px;
+
+        font-weight: 700;
+    }
+
+
+    .summary-total strong {
+        color: #087e4e;
+
+        font-size: 20px;
+    }
+
+
+    .summary-info {
+        display: flex;
+
+        gap: 8px;
+
+        margin-top: 20px;
+
+        padding: 12px;
+
+        border-radius: 8px;
+
+        background: #f5f8f7;
+    }
+
+
+    .summary-info span {
+        font-size: 12px;
+    }
+
+
+    .summary-info p {
+        margin: 0;
+
+        color: #75827d;
+
+        font-size: 10px;
+
+        line-height: 1.5;
+    }
+
+
+
+    /* RESPONSIVO */
+
+    @media (max-width: 850px) {
+
+        .finance-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .payment-summary {
+            order: -1;
+        }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+        .payment-card {
+            padding: 20px;
+        }
+
+        .card-top {
+            flex-direction: column;
+        }
+
+        .payment-info {
+            grid-template-columns: 1fr;
+        }
+
+        .payment-actions {
+            flex-direction: column;
+        }
+
+        .generate-button,
+        .back-button {
+            width: 100%;
+        }
+
+    }
+
+</style>
+
+{% endblock %}
