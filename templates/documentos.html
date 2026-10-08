@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-header">
+    <h1>Meus documentos</h1>
+    <p>Acesse os documentos disponíveis no seu ambiente institucional.</p>
+</div>
+
+<div class="info-alert">
+    <span class="alert-icon">✓</span>
+    <span>Documentos disponíveis para consulta neste ambiente de simulação.</span>
+</div>
+
+<h2 class="section-title">Documentos disponíveis</h2>
+
+<div class="document-list">
+
+    <div class="document-card">
+        <div class="document-card-icon">📄</div>
+
+        <div class="document-card-info">
+            <strong>Comprovante de vínculo</strong>
+            <span>Documento institucional</span>
+        </div>
+
+        <button class="button">
+            Visualizar
+        </button>
+    </div>
+
+
+    <div class="document-card">
+        <div class="document-card-icon">📋</div>
+
+        <div class="document-card-info">
+            <strong>Ficha funcional</strong>
+            <span>Informações funcionais</span>
+        </div>
+
+        <button class="button">
+            Visualizar
+        </button>
+    </div>
+
+
+    <div class="document-card">
+        <div class="document-card-icon">📑</div>
+
+        <div class="document-card-info">
+            <strong>Declaração institucional</strong>
+            <span>Documento disponível para consulta</span>
+        </div>
+
+        <button class="button">
+            Visualizar
+        </button>
+    </div>
+
+</div>
+
+{% endblock %}

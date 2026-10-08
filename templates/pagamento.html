@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="center-page">
+
+    <div class="payment-card">
+
+        <div class="attention-icon">
+            !
+        </div>
+
+        <h1>Antes de realizar o pagamento...</h1>
+
+        <p>
+            Pare por alguns segundos e verifique as informações
+            da cobrança.
+        </p>
+
+        <div class="attention-box">
+
+            <strong>⚠️ Fique atento!</strong>
+
+            <ul>
+                <li>Confira o endereço do site.</li>
+                <li>Verifique o beneficiário.</li>
+                <li>Desconfie de cobranças inesperadas.</li>
+                <li>Não clique em links suspeitos.</li>
+                <li>Não forneça senhas ou códigos.</li>
+            </ul>
+
+        </div>
+
+        <div class="payment-data">
+
+            <h3>Dados da cobrança</h3>
+
+            <p>
+                <strong>Beneficiário:</strong>
+                Instituição Federal — Simulação
+            </p>
+
+            <p>
+                <strong>Valor:</strong>
+                R$ 148,90
+            </p>
+
+            <p>
+                <strong>Vencimento:</strong>
+                01/10/2026
+            </p>
+
+        </div>
+
+        <a href="{{ url_for('revelacao') }}"
+           class="primary-button full">
+            Continuar →
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+<div class="page-header">
+
+    <h1>
+        Olá, {{ servidor }}!
+    </h1>
+
+    <p>
+        Bem-vindo(a) ao seu portal institucional.
+    </p>
+
+</div>
+
+
+<!-- AVISO -->
+
+<div class="info-alert">
+
+    <span class="alert-icon">✓</span>
+
+    <span>
+        Aqui você encontra informações e serviços disponíveis da sua conta.
+    </span>
+
+</div>
+
+
+<!-- RESUMO -->
+
+<h2 class="section-title">
+    Resumo
+</h2>
+
+
+<div class="cards">
+
+
+    <div class="card">
+
+        <div class="card-icon">
+            👤
+        </div>
+
+        <div class="card-content">
+
+            <strong>Servidor</strong>
+
+            <span>
+                {{ servidor }}
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="card-icon">
+            🏢
+        </div>
+
+        <div class="card-content">
+
+            <strong>Campus</strong>
+
+            <span>
+                Ariquemes
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="card-icon">
+            📄
+        </div>
+
+        <div class="card-content">
+
+            <strong>Documentos</strong>
+
+            <span>
+                3 disponíveis
+            </span>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<!-- COBRANÇAS -->
+
+<h2 class="section-title">
+    Cobranças em aberto
+</h2>
+
+
+<div class="charge">
+
+
+    <div class="charge-icon">
+        📄
+    </div>
+
+
+    <div class="charge-information">
+
+        <h3>
+            Contribuição Institucional
+        </h3>
+
+        <p>
+            Competência: Maio/2026
+        </p>
+
+        <span class="due">
+            Vencimento em 3 dias
+        </span>
+
+    </div>
+
+
+    <div class="charge-right">
+
+        <strong>
+            R$ 148,90
+        </strong>
+
+        <a href="{{ url_for('gerar_boleto') }}"
+           class="button">
+
+            📄 Gerar boleto
+
+        </a>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+{% endblock %}

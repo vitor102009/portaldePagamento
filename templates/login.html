@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Portal do Servidor</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="login-page">
+
+
+    <!-- =========================================
+         LADO ESQUERDO
+    ========================================== -->
+
+    <div class="login-intro">
+
+        <div class="login-logo">
+
+            <div class="brand-logo">
+
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+            <div>
+
+                <strong>
+                    INSTITUTO FEDERAL
+                </strong>
+
+                <small>
+                    Rondônia
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <h1>
+            Portal do Servidor
+        </h1>
+
+
+        <p>
+            Acesse seus serviços, documentos e informações institucionais.
+        </p>
+
+
+        <div class="login">
+
+            <strong></strong>
+
+            <br>
+
+           
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         CARD DE LOGIN
+    ========================================== -->
+
+    <div class="login-card">
+
+
+        <div class="login-icon">
+            👤
+        </div>
+
+
+        <h2>
+            Acesso ao Sistema
+        </h2>
+
+
+        <p class="login-subtitle">
+            Entre no ambiente do servidor
+        </p>
+
+
+        <form method="POST">
+
+
+            <!-- NOME -->
+
+            <label>
+                Nome do servidor
+            </label>
+
+            <div class="input-group">
+
+                <span>
+                    👤
+                </span>
+
+                <input
+                    type="text"
+                    name="nome"
+                    placeholder="Ex.: João da Silva"
+                    autocomplete="off"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- MATRÍCULA -->
+
+            <label>
+                Matrícula fictícia
+            </label>
+
+            <div class="input-group">
+
+                <span>
+                    🪪
+                </span>
+
+                <input
+                    type="text"
+                    name="matricula"
+                    placeholder="Ex.: SERVIDOR123"
+                    autocomplete="off"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- SENHA -->
+
+            <label>
+                Senha fictícia
+            </label>
+
+            <div class="input-group">
+
+                <span>
+                    🔒
+                </span>
+
+                <input
+                    type="password"
+                    name="senha"
+                    placeholder="Digite uma senha"
+                    autocomplete="off"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- BOTÃO -->
+
+            <button
+                type="submit"
+                class="login-button"
+            >
+
+                Entrar →
+
+            </button>
+
+
+        </form>
+
+
+
+        <!-- ESQUECEU SENHA -->
+
+        <a
+            href="#"
+            class="forgot-password"
+            onclick="event.preventDefault(); alert('Esta é uma simulação educativa. Não existe recuperação de senha real.');"
+        >
+            Esqueceu sua senha?
+        </a>
+
+
+
+        <!-- AVISO -->
+
+        <div class="login-security">
+
+            🔒
+
+             senha .
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+</body>
+
+</html>

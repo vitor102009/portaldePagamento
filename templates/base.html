@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Portal do Servidor</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<!-- TOPO -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+        <div class="brand-text">
+
+            <strong>INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA DE RONDÔNIA</strong>
+
+            <small>Portal do Servidor</small>
+
+        </div>
+
+    </div>
+
+
+    <div class="top-user">
+
+        <div class="top-avatar">
+            👤
+        </div>
+
+        <div class="top-user-name">
+
+            <strong>{{ servidor }}</strong>
+
+            <small>Servidor</small>
+
+        </div>
+
+        <a href="{{ url_for('sair') }}"
+           class="logout">
+
+            Sair
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+
+<!-- ESTRUTURA -->
+
+<div class="app-layout">
+
+
+    <!-- MENU LATERAL -->
+
+    <aside class="sidebar">
+
+
+        <div class="sidebar-user">
+
+            <div class="sidebar-avatar">
+                👤
+            </div>
+
+            <div>
+
+                <strong>{{ servidor }}</strong>
+
+                <small>Servidor</small>
+
+            </div>
+
+        </div>
+
+
+        <div class="menu-label">
+            MENU PRINCIPAL
+        </div>
+
+
+        <nav class="menu">
+
+
+            <a href="{{ url_for('painel') }}"
+               class="{% if request.endpoint == 'painel' %}active{% endif %}">
+
+                <span>🏠</span>
+
+                <span>Início</span>
+
+            </a>
+
+
+            <a href="{{ url_for('documentos') }}"
+               class="{% if request.endpoint == 'documentos' %}active{% endif %}">
+
+                <span>📄</span>
+
+                <span>Meus documentos</span>
+
+            </a>
+
+
+            <a href="{{ url_for('financeiro') }}"
+               class="{% if request.endpoint == 'financeiro' %}active{% endif %}">
+
+                <span>💰</span>
+
+                <span>Financeiro</span>
+
+            </a>
+
+
+            <a href="{{ url_for('gerar_boleto') }}"
+               class="{% if request.endpoint == 'gerar_boleto' or request.endpoint == 'boleto' %}active{% endif %}">
+
+                <span>📃</span>
+
+                <span>Boleto</span>
+
+            </a>
+
+
+            <a href="{{ url_for('perfil') }}"
+               class="{% if request.endpoint == 'perfil' %}active{% endif %}">
+
+                <span>👤</span>
+
+                <span>Perfil</span>
+
+            </a>
+
+
+        </nav>
+
+
+        <div class="menu-bottom">
+
+            <a href="{{ url_for('sair') }}">
+
+                <span>🚪</span>
+
+                <span>Sair</span>
+
+            </a>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- CONTEÚDO -->
+
+    <main class="content">
+
+        {% block content %}
+
+        {% endblock %}
+
+    </main>
+
+
+</div>
+
+
+</body>
+
+</html>
